@@ -2,9 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +23,7 @@ public class Librarycon {
 		return lser.main();
 	}
 	@PostMapping("/signin")
+	
 	public library sub(@RequestBody library h)
 	{
 		return lser.sub(h);
@@ -38,20 +37,6 @@ public class Librarycon {
     public void delect(@PathVariable("Isno") int Inso) {
 		lser.del(Inso);
 	}
-	@GetMapping("/sortlibrary/{field}")
-	public List<library> sortlibrary(@PathVariable String field){
-		return lser.sortlibrary(field);
-	}
-	@GetMapping("/helm/{offset}/{pageSize}")
-	public Page<com.example.demo.model.library> library (@PathVariable int offset,@PathVariable int pageSize){
-		return lser.pageablelib(offset,pageSize);
-	}
-	
-	@GetMapping("/helm2/{offset}/{pageSize}/{field}")
-	public Page<com.example.demo.model.library> library (@PathVariable int offset,@PathVariable int pageSize,@PathVariable String field){
-		return lser.pageablelib(offset,pageSize);
-	}
-	
-	}
 
+}
  

@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-
 public class library {
 	@Id
 	
@@ -16,7 +15,6 @@ public class library {
 	private String llanguage;
 	private String lpublisher;
 	private int lprice;
-	
 	public int getLsno() {
 		return lsno;
 	}
